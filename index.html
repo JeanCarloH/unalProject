@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-store"></i>
+            UnalStore
+          </div>
+          <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle">
+              <i class="fas fa-moon"></i>
+            </button>
+            <button class="cart-icon" id="cartIcon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="filters">
+      <div class="container">
+        <div class="filters-content">
+          <div class="filter-group">
+            <label class="filter-label">Categoría</label>
+            <select class="filter-select" id="categoryFilter">
+              <option value="">Todas las categorías</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Rango de precio</label>
+            <div class="price-range">
+              <div class="price-inputs">
+                <input type="number" class="filter-input" id="minPrice" placeholder="Mín" min="0" />
+                <span>-</span>
+                <input type="number" class="filter-input" id="maxPrice" placeholder="Máx" min="0" />
+              </div>
+            </div>
+          </div>
+          <div class="filter-group">
+            <button class="clear-filters" id="clearFilters">
+              <i class="fas fa-refresh"></i>
+              Limpiar filtros
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <div class="container">
+        <div class="products-header">
+          <h2 class="products-title">Productos</h2>
+          <span class="products-count" id="productsCount">0 productos</span>
+        </div>
+        <div class="products-grid" id="productsGrid">
+          <div class="loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Cargando productos...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+      <div class="cart-content">
+        <div class="cart-header">
+          <h3 class="cart-title">Carrito de Compras</h3>
+          <button class="close-cart" id="closeCart">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+          <div class="empty-cart">
+            <i class="fas fa-shopping-cart"></i>
+            <p>Tu carrito está vacío</p>
+          </div>
+        </div>
+        <div class="cart-total" id="cartTotal">Total: $0</div>
+      </div>
+    </div>
+    <script type="module" src="js/data.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
